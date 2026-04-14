@@ -1,0 +1,68 @@
+[
+    {
+        "card-124": {
+            "status": "active",
+            "title": "Kit Elegance Masculino",
+            "img": {
+                "img-1": "../demo/uploads\/rifas\/UBH-05-02-314.41\/premio_1.jpg"
+            },
+            "imgs": [
+                "../demo/uploads\/rifas\/UBH-05-02-314.41\/premio_1.jpg"
+            ],
+            "description": "Concorra a um look completo: suéter premium, calça alfaiataria, tênis slip-on e acessórios.",
+            "price": "15,00",
+            "tickets-sold": "0\/100",
+            "draw-date": "07\/03\/2026"
+        }
+    },
+    {
+        "card-123": {
+            "status": "postponed",
+            "title": "Galaxy Tab + 212VIP",
+            "img": {
+                "img-1": "../demo/uploads/rifas/QKK-04-02-314.96/premio_1.jpg",
+                "img-2": "../demo/uploads/rifas/QKK-04-02-314.96/premio_2.jpg"
+            },
+            "imgs": [
+                "../demo/uploads\/rifas\/QKK-04-02-314.96\/premio_1.jpg",
+                "../demo/uploads\/rifas\/QKK-04-02-314.96\/premio_2.jpg"
+            ],
+            "description": "Concorra a um Galaxy Tab S6 Lite com caneta + perfume 212 VIP Black original. Participe!",
+            "price": "10,00",
+            "tickets-sold": "0\/100",
+            "draw-date": "21\/03\/2026"
+        }
+    },
+    {
+        "card-122": {
+            "status": "canceled",
+            "title": "Kit Gamer RGB Pro",
+            "img": {
+                "img-1": "../demo/uploads\/rifas\/EQU-04-02-314.28\/premio_1.jpg"
+            },
+            "imgs": [
+                "../demo/uploads\/rifas\/EQU-04-02-314.28\/premio_1.jpg"
+            ],
+            "description": "Microfone RGB + headset gamer com som imersivo. Ideal para jogos, lives e chamadas!",
+            "price": "10,00",
+            "tickets-sold": "0\/100",
+            "draw-date": "28\/03\/2026"
+        }
+    },
+    {
+        "card-121": {
+            "status": "finished",
+            "title": "Notebook Dell Pro",
+            "img": {
+                "img-1": "../demo/uploads\/rifas\/DVT-03-02-314.40\/premio_1.jpg"
+            },
+            "imgs": [
+                "../demo/uploads\/rifas\/DVT-03-02-314.40\/premio_1.jpg"
+            ],
+            "description": "Notebook Dell potente e rápido, ideal para estudos, trabalho e uso diário. Participe!",
+            "price": "10,00",
+            "tickets-sold": "0\/100",
+            "draw-date": "07\/03\/2026"
+        }
+    }
+]

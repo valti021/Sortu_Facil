@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortu Fácil | Login e Cadastro</title>
+    <link rel="icon" type="image/png" href="../front-end/midia/icon/favicon-180x180.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+    <link rel="stylesheet" href="css/cadastro-entrar/main.css">
+    <link rel="stylesheet" href="demo/css/main.css">
+
+
+</head>
+<body>
+
+    <main class="layout-geral">
+
+        <!-- LADO ESQUERDO -->
+        <section class="lado-esquerdo">
+            <div class="lado-esquerdo-content">
+                <!-- Conteúdo será inserido via JavaScript -->
+            </div>
+        </section>
+
+        <!-- LADO DIREITO -->
+        <section class="lado-direito">
+
+            <div id="mensagem-demo">
+                <!---Mensagem de demonstração--->
+            </div>
+
+            <!-- LOGIN -->
+            <form id="form-login" class="box-form">
+                <p class="aviso">Atenção: Nossa plataforma está em desenvolvimento. Alguns recursos podem não estar disponíveis.</p>
+                <h2>Login</h2>
+
+                <p style="display: none;" id="erro-login"></p>
+
+                <label for="login-email">E-mail:</label>
+                <input type="email" id="login-email" type="email"  placeholder="seu@email.com">
+
+                <label for="login-password">Senha:</label>
+                <input type="password" id="login-password" name="password"  placeholder="Digite sua senha">
+
+                <div class="lembrar-login">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    <label id="lembrar" for="remember-me">Lembrar-me</label>
+                </div>
+
+                <button type="submit">Entrar</button>
+
+                <!-- LINK PARA MOSTRAR O CADASTRO -->
+                <p class="texto-link">Não tem uma conta?
+                    <a href="#" id="mostrar-cadastro">Cadastrar agora</a>
+                </p>
+            </form>
+
+            <!-- CADASTRO -->
+            <form id="form-cadastro" class="box-form" enctype="multipart/form-data">
+                <p class="aviso">Atenção: Nossa plataforma está em desenvolvimento. Alguns recursos podem não estar disponíveis.</p>
+                <h2>Cadastre-se</h2>
+                
+                <p style="display: none;" id="erro-cadastro"></p>
+                
+                <!-- Campo para imagem de perfil -->
+                <div class="profile-image-container">
+                    <div class="profile-image-preview" id="profile-preview">
+                        <img src="" alt="Pré-visualização da imagem" id="preview-image">
+                        <i class="fas fa-user icon-placeholder"></i>
+                        <span id="default-text">Clique para adicionar imagem</span>
+                    </div>
+                    
+                    <label for="imagem_perfil" class="custom-file-upload">
+                        <i class="fas fa-upload upload-icon"></i>
+                        Escolher imagem
+                    </label>
+                    <input type="file" id="imagem_perfil" name="imagem_perfil" accept="image/*" class="file-input">
+                    <p class="file-info">Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 5MB. Você poderá recortar a imagem após selecionar.</p>
+                </div>
+                
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+                
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu sobrenome (opcional)">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"  placeholder="seu@email.com">
+                
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha"  placeholder="Crie uma senha segura">
+
+                <div class="lembrar-login">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    <label id="lembrar" for="remember-me">Lembrar-me</label>
+                </div>
+                
+                <button type="submit">Cadastrar</button>
+                
+                <!-- LINK PARA VOLTAR AO LOGIN -->
+                <p class="texto-link">Já possui conta?
+                    <a href="#" id="mostrar-login">Faça login aqui</a>
+                </p>
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- MODAL DE RECORTE DE IMAGEM -->
+    <div id="crop-modal" class="crop-modal">
+        <div class="crop-modal-content">
+            <div class="crop-modal-header">
+                <h3>Recortar Imagem</h3>
+                <button type="button" id="close-crop-modal" class="close-crop-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="crop-modal-body">
+                <div class="crop-container">
+                    <img id="crop-image" src="" alt="Imagem para recortar">
+                </div>
+                <div class="crop-info">
+                    <p>Arraste a grade para escolher a área que deseja recortar</p>
+                </div>
+            </div>
+            <div class="crop-modal-footer">
+                <button type="button" id="cancel-crop" class="btn-cancel">Cancelar</button>
+                <button type="button" id="confirm-crop" class="btn-confirm">Confirmar Recorte</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script src="js/image-cropper.js"></script>
+    <script src="js/cadastro-entrar.js"></script>
+    <script src="demo/js/login.js"></script>
+    <script src="demo/js/injetar-html.js"></script>
+
+</body>
+</html>

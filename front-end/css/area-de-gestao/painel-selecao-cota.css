@@ -1,0 +1,135 @@
+/* ===============================
+   PAINEL DE SELEÇÃO DE COTAS
+================================ */
+
+.conteiner-painel-selecao {
+  background: var(--verde-fundo-claro);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* Layout principal */
+.display-de-cotas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 1.5rem;
+  
+}
+
+/* ===============================
+   COTAS SELECIONADAS
+================================ */
+
+.cotas-selecionadas {
+  background: var(--cor-branco);
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: var(--sombra-suave);
+}
+
+.cotas-selecionadas h3 {
+  color: var(--cinza-titulo);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#cotas-selecionadas-texto {
+  font-weight: 600;
+  color: var(--verde-escuro);
+}
+
+/* ===============================
+   ÁREA DE CÁLCULO
+================================ */
+
+.area-de-calculo {
+  background: var(--cor-branco);
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: var(--sombra-suave);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.6rem;
+}
+
+.area-de-calculo h6 {
+  grid-column: span 2;
+  font-size: 0.75rem;
+  color: var(--gray-color);
+  margin-top: 0.5rem;
+}
+
+.area-de-calculo span,
+.area-de-calculo samp {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--verde-principal);
+}
+
+/* Destaque no valor total */
+#valor-total {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+}
+
+/* ===============================
+   ÁREA DE AÇÃO
+================================ */
+
+.area-acao {
+  background: var(--cor-branco);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+
+}
+
+.area-acao h4 {
+  margin-top: 0.5rem;
+  color: var(--cinza-titulo);
+  font-size: 1rem;
+}
+
+/* Select e inputs */
+.area-acao select,
+.area-acao input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.area-acao select:focus,
+.area-acao input:focus {
+  outline: none;
+  border-color: var(--verde-principal);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Botão principal */
+#btn-atualizar-status {
+  margin-top: 0.8rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--verde-degrade);
+  color: var(--cor-branco);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#btn-atualizar-status:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+#btn-atualizar-status:active {
+  transform: scale(0.98);
+}

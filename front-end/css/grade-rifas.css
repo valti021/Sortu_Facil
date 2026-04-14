@@ -1,0 +1,104 @@
+/* ===============================
+   GRADE DE RIFAS
+================================= */
+
+.grade-rifas {
+    width: 100%;
+    padding: 25px;
+}
+
+
+#conteudo-rifas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--cor-branco);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 30px;
+    border-bottom: 2px solid var(--verde-principal);
+    border-left: 2px solid var(--verde-principal);
+    border-right: 2px solid var(--verde-principal);
+}
+
+#titulo-aba {
+    display: flex;
+    align-items: center; 
+    justify-content: center;   
+    color: var(--cinza-titulo);
+    font-size: 25px;
+    margin: 30px;
+    text-align: center;
+    border-bottom: 3px solid var(--verde-principal);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+
+
+#btn-criar-rifa-icone {
+    background: var(--verde-principal);
+    color: var(--cor-branco);
+    border: none;
+    padding: 10px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+    margin: 10px;
+}
+
+#btn-criar-rifa-icone:hover {
+    opacity: 0.85;
+}
+
+#bloco-sem-rifas {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--cor-branco);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 2px dashed var(--verde-claro);
+}
+
+#mensagem-sem-rifas {
+    color: var(--cinza-titulo);
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-family: 'Nunito', sans-serif;
+    opacity: 0.8;
+}
+
+@media(max-width:780px){
+    #titulo-aba{
+        font-size: 20px;
+    }
+
+    #btn-criar-rifa-icone{
+        font-size: 13px;
+        padding: 8px 8px;
+    }
+
+    #mensagem-sem-rifas{
+        font-size: 15px;
+    }
+}
+
+
+@media(max-width:480px){
+    #titulo-aba{
+        font-size: 15px;
+    }
+
+    #btn-criar-rifa-icone{
+        font-size: 10px;
+        padding: 5px 5px;
+    }
+
+    #mensagem-sem-rifas{
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,20 @@
+.modal-finalizar-cancelar {
+  border-top: 6px solid var(--cor-vermelho);
+}
+
+#btn-confirmar-cancelar {
+  margin-top: 1.5rem;
+  background: var(--cor-vermelho);
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#btn-confirmar-cancelar:hover {
+  opacity: 0.9;
+}
+

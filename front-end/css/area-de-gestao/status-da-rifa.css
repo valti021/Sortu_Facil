@@ -1,0 +1,18 @@
+.status-da-rifa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--gray-color);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--sombra-suave);
+}
+
+.status-da-rifa samp {
+  font-size: 1rem;
+  font-weight: bold;
+
+}

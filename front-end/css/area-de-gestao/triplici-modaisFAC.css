@@ -1,0 +1,118 @@
+/* Modal Finalizar Rifa Styles */
+/* ===============================
+   importação de css
+================================ */
+@import url('./modal-finalizar-rifa.css');
+@import url('./modal-finalizar-adiar.css');
+@import url('./modal-finalizar-cancelar.css');
+
+/* ===============================
+   CONTROLE GERAL DOS MODAIS
+================================ */
+
+.conteiner-tabela-cota {
+  position: relative;
+}
+
+/* camada de sobreposição */
+.conteiner-tabela-cota > div[data-modo] {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.267);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+/* todos os modais começam ocultos */
+.modal-finalizar-rifa,
+.modal-finalizar-adiar,
+.modal-finalizar-cancelar {
+  display: none;
+}
+
+/* ===============================
+   EXIBIÇÃO POR MODO
+================================ */
+
+[data-modo="finalizar"] .modal-finalizar-rifa {
+  display: block;
+}
+
+[data-modo="adiar"] .modal-finalizar-adiar {
+  display: block;
+}
+
+[data-modo="cancelar"] .modal-finalizar-cancelar {
+  display: block;
+}
+
+
+
+.modal-finalizar-rifa,
+.modal-finalizar-adiar,
+.modal-finalizar-cancelar {
+  background: var(--cor-branco);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 620px;
+  box-shadow: var(--shadow);
+  animation: surgirModal 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+@keyframes surgirModal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-finalizar-rifa h2,
+.modal-finalizar-adiar h2,
+.modal-finalizar-cancelar h2 {
+  color: var(--cinza-titulo);
+  margin-bottom: 0.5rem;
+}
+
+.modal-finalizar-rifa p,
+.modal-finalizar-adiar p,
+.modal-finalizar-cancelar p {
+  color: var(--dark-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+
+.cronometro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.cronometro samp {
+  background: var(--verde-fundo-claro);
+  color: var(--verde-escuro);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  min-width: 55px;
+  text-align: center;
+}
+
+
+.data-hora{
+    text-align: center;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,114 @@
+/* ===============================
+   SESSÃO 1 – DADOS DA RIFA
+================================= */
+
+.sessao1 {
+    background: var(--verde-fundo-claro);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ===============================
+   DADOS DA RIFA (SERIAL)
+================================= */
+
+.dados-rifa {
+    background: var(--verde-degrade);
+    color: var(--cor-branco);
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra-suave);
+}
+
+.dados-rifa h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.dados-rifa samp {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ===============================
+   DADOS DAS COTAS
+================================= */
+
+.dados-cotas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+/* CARD PADRÃO */
+.dados-cotas > div {
+    background: var(--cor-branco);
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: var(--sombra-suave);
+    text-align: center;
+    transition: var(--transition);
+    border-left: 6px solid transparent;
+}
+
+.dados-cotas > div:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+/* TÍTULOS */
+.dados-cotas h3 {
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--cinza-titulo);
+    text-transform: uppercase;
+}
+
+/* NÚMEROS */
+.dados-cotas p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.dados-cotas samp {
+    font-weight: 700;
+}
+
+/* ÍCONE */
+.dados-cotas i {
+    margin-left: 0.4rem;
+    color: var(--primary-color);
+}
+
+/* ===============================
+   CORES POR STATUS
+================================= */
+
+.qta-disponivel {
+    border-left-color: var(--primary-color);
+}
+
+.qta-reservada {
+    border-left-color: var(--accent-color);
+}
+
+.qta-paga {
+    border-left-color: var(--verde-escuro);
+}
+
+/* ===============================
+   RESPONSIVO
+================================= */
+
+@media (max-width: 768px) {
+    .dados-cotas {
+        grid-template-columns: 1fr;
+    }
+}

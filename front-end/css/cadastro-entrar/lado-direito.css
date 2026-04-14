@@ -1,0 +1,384 @@
+/* ===== LADO DIREITO ===== */
+.lado-direito {
+    width: 50%;
+    background: var(--cor-branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 40px;
+    min-height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* ===== BOX DOS FORMULÁRIOS ===== */
+.box-form {
+    display: flex;
+    flex-direction: column;
+    background: var(--cor-branco);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--sombra-suave);
+    border-top: 5px solid var(--verde-principal);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: visible;
+    animation: fadeIn 0.5s ease forwards;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.box-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+}
+
+.box-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.box-form h2 {
+    margin-bottom: 25px;
+    color: var(--cinza-titulo);
+    font-size: 28px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.box-form h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--verde-principal);
+    border-radius: 2px;
+}
+
+/* ===== INPUTS ===== */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+
+.box-form label {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.box-form input {
+    width: 100%;
+    padding: 14px;
+    padding-right: 45px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.box-form input:focus {
+    border-color: var(--verde-principal);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* ===== BOTÃO DE MOSTRAR/OCULTAR SENHA ===== */
+.password-toggle {
+    position: absolute;
+    left: 95%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s;
+    z-index: 10;
+    padding: 0;
+}
+
+.password-toggle:hover {
+    color: var(--verde-principal);
+}
+
+
+.lembrar-login{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
+input[type="checkbox"] {
+  /* 1. Remove o visual padrão do navegador */
+  appearance: none;
+  -webkit-appearance: none;
+  
+  /* 2. Define o tamanho e estilo da caixa */
+  width: 15px;
+  height: 15px;
+  border: 2px solid #616060;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  
+  /* 3. Prepara para centralizar o ícone "v" */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quando o checkbox estiver marcado */
+input[type="checkbox"]:checked {
+  background-color: var(--verde-principal); /* Cor do fundo da caixa */
+  border-color: var(--verde-principal);
+}
+
+/* Criando o ícone "v" personalizado */
+input[type="checkbox"]:checked::after {
+  content: "✔"; /* O símbolo do check */
+  color: var(--cor-branco);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+#lembrar {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* ===== BOTÕES ===== */
+.box-form button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: var(--verde-principal);
+    color: var(--cor-branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.box-form button[type="submit"]:hover {
+    background: var(--verde-escuro);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.box-form button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Efeito de brilho no botão */
+.box-form button[type="submit"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.box-form button[type="submit"]:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(40, 40);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== MENSAGEM DE ERRO ===== */
+#erro-login,
+#erro-cadastro {
+    color: var(--cor-vermelho);
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: rgba(255, 0, 0, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid var(--cor-vermelho);
+}
+
+.texto-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 15px;
+    color: #666;
+}
+
+.texto-link a {
+    color: var(--verde-principal);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.texto-link a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--verde-principal);
+    transition: width 0.3s ease;
+}
+
+.texto-link a:hover {
+    color: var(--verde-escuro);
+}
+
+.texto-link a:hover::after {
+    width: 100%;
+}
+
+/* ===== ESTILOS PARA IMAGEM DE PERFIL ===== */
+.profile-image-container {
+    text-align: center;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-image-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--verde-claro), var(--verde-principal));
+    margin: 0 auto 15px;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid var(--verde-claro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image-preview:hover {
+    border-color: var(--verde-principal);
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image-preview #preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.profile-image-preview #default-text {
+    color: var(--cor-branco);
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.profile-image-preview .icon-placeholder {
+    font-size: 40px;
+    color: var(--cor-branco);
+    margin-bottom: 10px;
+}
+
+.profile-image-preview.has-image #default-text,
+.profile-image-preview.has-image .icon-placeholder {
+    display: none;
+}
+
+.profile-image-preview.has-image #preview-image {
+    display: block;
+}
+
+/* Esconder o input file padrão */
+.file-input {
+    display: none;
+}
+
+/* Estilizar o botão de upload personalizado */
+.custom-file-upload {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--verde-principal);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+}
+
+.custom-file-upload:hover {
+    background-color: var(--verde-escuro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+}
+
+.custom-file-upload .upload-icon {
+    margin-right: 8px;
+}
+
+.file-info {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}

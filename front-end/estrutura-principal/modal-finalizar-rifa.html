@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Finalizar Rifa</title>
+
+
+
+</head>
+<body>
+
+    <div class="modal-finalizar-rifa">
+        <h2>Parabéns você conseguiu bater a meta!</h2>
+        <p class="data-hora">Aguarde a data do sorteio que será dia <samp class="data-horario-sorteio">00/00/0000 - 00:00:00</samp></p>
+        <div class="cronometro">
+            <samp class="dia"></samp>
+            <samp class="hora"></samp>
+            <samp class="minuto"></samp>
+            <samp class="segundo"></samp>
+        </div>
+        <p>*Houve algum problema, e precisa <a href="#">adiar</a> ou <a href="#">cancelar</a> a rifa.*</p>
+    </div>
+
+    <div class="modal-finalizar-adiar">
+        <div class="fechar-modal">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        
+        <h2>Ops, parece que você não conseguiu bater a meta antes da data do sorteio!</h2>
+        <p class="data-hora">O sorteio seria <samp class="data-horario-sorteio">00/00/0000 - 00:00:00</samp></p>
+        <div class="cronometro">
+            <samp class="dia"></samp>
+            <samp class="hora"></samp>
+            <samp class="minuto"></samp>
+            <samp class="segundo"></samp>
+        </div>
+        <p>Mas não se preocupe, você pode adiar a rifa para uma nova data!</p>
+        <label for="nova-data-sorteio">Nova data do sorteio:</label>
+        <select name="nova-data-sorteio" id="nova-data-sorteio">
+            <option value="00/00/0000">00/00/0000</option>
+        </select>
+        <label for="nova-hora-sorteio">Nova hora do sorteio:</label>
+        <select name="nova-hora-sorteio" id="nova-hora-sorteio">
+            <option value="00:00:00">00:00:00</option>
+        </select>
+        <div class="btn-acoes">
+            <button id="btn-adiar-rifa">Adiar Rifa</button>
+            <button id="btn-cancelar-adiar">Cancelar Rifa</button>
+        </div>
+        
+    </div>
+
+    <div class="modal-finalizar-cancelar">
+        <h2>Infelismente você não conseguiu bater a meta antes da data do sorteio!
+        </h2>
+        <p>Automaticamente quando um usuario não consegue bater a meta, a rifa será cancelada e todos os participantes serão notificados e os valores pagos serão reembolsados.</p>
+        <button id="btn-confirmar-cancelar">Confirmar Cancelamento</button>
+    </div>
+    
+</body>
+</html>

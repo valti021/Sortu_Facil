@@ -1,0 +1,16 @@
+/* Modal Finalizar Rifa Styles */
+
+
+.modal-finalizar-rifa {
+  border-top: 6px solid var(--verde-principal);
+}
+
+.modal-finalizar-rifa a {
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.modal-finalizar-rifa a:hover {
+  text-decoration: underline;
+}

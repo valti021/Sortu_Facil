@@ -1,0 +1,85 @@
+/* ===== RESPONSIVIDADE — LADO ESQUERDO ===== */
+
+@media (max-width: 1024px) {
+    .lado-esquerdo {
+        width: 100%;
+        padding: 40px;
+        min-height: auto;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    .lado-esquerdo {
+        padding: 30px 20px;
+        min-height: auto;
+    }
+
+    .lado-esquerdo h1 {
+        font-size: 32px;
+    }
+
+    .lado-esquerdo p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .lado-esquerdo {
+        padding: 30px 20px;
+        min-height: auto;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+
+    .lado-esquerdo h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .lado-esquerdo p {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .decorative-element {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .lado-esquerdo {
+        padding: 25px 15px;
+        min-height: auto;
+        box-sizing: border-box;
+    }
+
+    .lado-esquerdo h1 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .lado-esquerdo p {
+        font-size: 14px;
+        margin-bottom: 15px;
+        max-width: 100%;
+    }
+
+    .lado-esquerdo::before {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .lado-esquerdo h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .lado-esquerdo p {
+        font-size: 13px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+}

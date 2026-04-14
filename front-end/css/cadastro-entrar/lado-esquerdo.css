@@ -1,0 +1,91 @@
+/* ===== LADO ESQUERDO ===== */
+.lado-esquerdo {
+    width: 50%;
+    padding: 60px;
+    color: var(--cor-branco);
+    background: var(--verde-degrade);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Animações para o lado esquerdo */
+.lado-esquerdo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+}
+
+.lado-esquerdo-content {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.lado-esquerdo-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lado-esquerdo h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.lado-esquerdo p {
+    font-size: 18px;
+    max-width: 400px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Elementos decorativos animados */
+.decorative-element {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.decorative-element:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.decorative-element:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    bottom: 15%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.decorative-element:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}

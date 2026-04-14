@@ -1,0 +1,59 @@
+:root{
+    --cor-primaria: #f59b42;
+    --cor-secundaria: #333;
+    --cor-terciaria: #f5b97e;
+    --cor-fundo: #f4f4f4;
+    --cor-texto: #555;  
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;       
+    flex-direction: column;
+    min-height: 100vh;        
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.conteiner-central{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-fundo);
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.ifo-conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+
+}
+
+.mensagem{
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    background-color: var(--cor-terciaria);
+    border: 1px solid var(--cor-primaria);
+    padding: 15px;
+    border-radius: 5px ;
+    margin-top: 10px;
+}
+
+strong{
+    color: blue;
+}
+
+

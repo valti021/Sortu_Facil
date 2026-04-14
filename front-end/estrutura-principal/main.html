@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortu Fácil - Home</title>
+    <link rel="icon" type="image/png" href="../midia/icon/favicon-180x180.png">
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Nunito&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+
+    <link rel="stylesheet" href="../avisos/css/main.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+
+
+
+
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="../estrutura-principal/main.html">Início</a></li>
+            <li><a href="#">Resultado</a></li>
+            <li><a href="#">Sortu</a></li>
+
+            <!-- Link exclusivo MASTER -->
+            <li id="link-master" hidden>
+                <a href="#">Master</a>
+            </li>
+
+            <li id="link-assinatura" hidden>
+                <a href="#">Seja Premium</a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fas fa-cog icone-engrenagem"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <header>
+        <a href="../estrutura-principal/main.html" class="logo">
+            <img src="../midia/logo/logo.png" alt="sortu fácil logo">
+        </a>
+        <div class="icone-conta">
+            <a href="#" id="abrir-modal-conta">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+        <div class="espaco-anuncio">
+            <!-- Espaço reservado para anúncios -->
+        </div>
+
+    <main id="conteiner-central">
+
+        <div id="pop-up-avisos">
+            <!-- pop-up de avisos será inserido aqui -->
+        </div>
+
+            <div class="bloco-visualizacao-rifas">
+
+                <nav class="status-vendedor">
+                    <ul>
+                        <li data-status="ativa">Ativas <span id="rifas-ativas">0</span></li>
+                        <li data-status="adiada">Adiadas <span id="rifas-adiadas">0</span></li>
+                        <li data-status="cancelada">Canceladas <span id="rifas-canceladas">0</span></li>
+                        <li data-status="concluida">Concluídas <span id="rifas-concluidas">0</span></li>
+                    </ul>
+                </nav>
+
+                <h2 id="titulo-aba">
+                    <span id="titulo-texto">Ativas</span>
+                    <button id="btn-criar-rifa-icone" class="btn-icone">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </h2>
+                <section class="grade-rifas">
+                    <div id="conteudo-rifas">
+
+
+
+
+                        <div id="bloco-sem-rifas" class="sem-rifas" style="display:none;"><p id="mensagem-sem-rifas"></p></div>
+
+                        <div class="lista-rifas" id="lista-rifas">
+
+                            <div id="modelo-rifa-card" >
+
+                                <div class="rifa-card-example">
+                                    <h4 class="title"></h4>
+
+                                    <div class="img-premio">
+                                        <i class="fa-solid fa-circle-chevron-left btn-left" ></i>
+
+                                        <div class="img-container">
+                                            <!-- Imagem inserida pelo JS -->
+                                        </div>
+                                        
+                                        
+                                        <i class="fa-solid fa-circle-chevron-right btn-right"></i>
+                                    </div>
+                                    <div class="cont-navegacao">
+                                        <div class="indentificador-de-paginacao">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="descricao">
+                                        <p class="texto"></p>
+                                    </div>
+
+                                    <div class="grup-details">
+                                        <div class="details">
+                                            <span>
+                                                <i class="fas fa-tag"></i>
+                                                R$ <span class="price"></span> /dezena
+                                            </span>
+
+                                            <span class="tickets-sold">
+                                                <i class="fas fa-ticket-alt"></i>
+                                            </span>
+                                        </div>
+
+                                        <div class="details">
+                                            <span class="draw-date">
+                                                <i class="far fa-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="link-gerenciar">
+                                        <a class="gerenciar" href="#">Gerenciar →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="carregar-mais" style="display:none; text-align:center; margin-top:10px;">
+                            <button id="btn-carregar-mais" style="
+                                background: none;
+                                border: none;
+                                color: #4CAF50;
+                                text-decoration: underline;
+                                cursor: pointer;
+                                padding: 0;
+                                font: inherit;
+                            ">Carregar mais</button>
+                        </div>
+                    </div>
+                </section>
+            </div>  
+            
+                <div class="modal-conta" id="container-modal-conta"></div>
+            
+            
+                <div class="espaco-anuncio">
+                    <!-- Espaço reservado para anúncios -->
+                     
+                </div>
+    </main>
+
+
+
+
+
+<!-- Footer Lobby -->
+<footer class="footer-lobby">
+    <div class="footer-left">
+        <img src="../midia/logo/logo.png" alt="Sortu Fácil" class="footer-logo">
+        <span>© 2026 Sortu Fácil</span>
+    </div>
+
+    <div class="footer-right">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</footer>
+
+
+
+    <div id="cookie-consent" class="cookie-consent" aria-live="polite">
+        <div class="cookie-consent-inner">
+            <p class="cookie-text">Usamos cookies para melhorar sua experiência. Deseja aceitar cookies?</p>
+            <div class="cookie-actions">
+                <button id="cookie-accept" class="btn-aceitar">Aceitar</button>
+                <button id="cookie-decline" class="btn-recusar">Recusar</button>
+                <button id="cookie-later" class="btn-mais-tarde">Deixar pra depois</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="../js/importacoes-js.js"></script>
+    <script src="../js/modal-criar-rifa.agenda.js"></script>
+    <script src="../avisos/js/injecao.js"></script>
+    <script src="../avisos/js/logica-conteudo.js"></script>
+    <script src="../avisos/js/controle-exibicao.js"></script>
+
+
+</body>
+</html>

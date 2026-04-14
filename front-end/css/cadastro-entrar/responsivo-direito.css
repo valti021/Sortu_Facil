@@ -1,0 +1,230 @@
+/* ===== RESPONSIVIDADE — LADO DIREITO ===== */
+
+@media (max-width: 1024px) {
+    .lado-direito {
+        width: 100%;
+        padding: 40px 20px;
+        gap: 30px;
+        min-height: auto;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+
+    .box-form {
+        padding: 30px;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .lado-direito {
+        padding: 25px 15px;
+        gap: 25px;
+        min-height: auto;
+    }
+
+    .box-form {
+        padding: 22px;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .profile-image-preview {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-image-preview .icon-placeholder {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .lado-direito {
+        padding: 20px;
+        gap: 20px;
+        min-height: auto;
+    }
+
+    .box-form {
+        padding: 18px;
+        border-radius: 12px;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .box-form h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .box-form input {
+        padding: 12px;
+        padding-right: 40px;
+        font-size: 16px;
+    }
+
+    .box-form button[type="submit"] {
+        padding: 13px;
+        font-size: 15px;
+        margin-top: 8px;
+    }
+
+    .profile-image-preview {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 12px;
+    }
+
+    .profile-image-preview .icon-placeholder {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .custom-file-upload {
+        padding: 10px 20px;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .texto-link {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .input-group {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lado-direito {
+        padding: 15px;
+        gap: 15px;
+        min-height: auto;
+    }
+
+    .box-form {
+        padding: 16px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .box-form h2 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .box-form label {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .box-form input {
+        padding: 11px;
+        padding-right: 38px;
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    .box-form button[type="submit"] {
+        padding: 12px;
+        font-size: 14px;
+        margin-top: 6px;
+    }
+
+    .password-toggle {
+        left: 93%;
+        font-size: 16px;
+    }
+
+    .profile-image-preview {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 10px;
+        border: 2px solid var(--verde-claro);
+    }
+
+    .profile-image-preview .icon-placeholder {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    .profile-image-preview #default-text {
+        font-size: 12px;
+    }
+
+    .custom-file-upload {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        font-size: 13px;
+        margin-bottom: 8px;
+        box-sizing: border-box;
+    }
+
+    .custom-file-upload .upload-icon {
+        margin-right: 5px;
+    }
+
+    .file-info {
+        font-size: 11px;
+        margin-top: 4px;
+    }
+
+    .texto-link {
+        margin-top: 12px;
+        font-size: 13px;
+    }
+
+    .input-group {
+        margin-bottom: 14px;
+    }
+
+    #erro-login,
+    #erro-cadastro {
+        font-size: 13px;
+        padding: 8px 12px;
+        margin-bottom: 12px;
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 360px) {
+    .box-form {
+        padding: 16px;
+    }
+
+    .box-form h2 {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .box-form input {
+        padding: 10px;
+        padding-right: 35px;
+        font-size: 15px;
+    }
+
+    .box-form button[type="submit"] {
+        padding: 11px;
+        font-size: 13px;
+    }
+
+    .profile-image-preview {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 8px;
+    }
+
+    .profile-image-preview .icon-placeholder {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+}

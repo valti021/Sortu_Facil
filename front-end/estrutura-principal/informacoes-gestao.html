@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações & Gestão</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/grade-rifas.css">
+    <link rel="stylesheet" href="../css/modal-criar-rifa.css">
+    <link rel="stylesheet" href="../css/css-footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Nunito&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/modal-conta.css">
+    <link rel="stylesheet" href="../css/assinatura.css">
+
+    <link rel="stylesheet" href="../css/area-de-gestao/main-gestao.css">
+
+    <link rel="stylesheet" href="../css/area-de-gestao/modal-compartilhar-rifa.css">
+
+    <link rel="stylesheet" href="../css/area-de-gestao/status-da-rifa.css">
+    <link rel="stylesheet" href="../css/area-de-gestao/modal-finalizar-rifa.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../estrutura-principal/main.html">Início</a></li>
+            <li><a href="../templates/resultado.html">Resultado</a></li>
+            <li><a href="../templates/reservados.html">Sortu</a></li>
+
+            <!-- Link exclusivo MASTER -->
+            <li id="link-master" hidden>
+                <a href="../templates/usuario-master.html">Master</a>
+            </li>
+
+            <li id="link-assinatura" hidden>
+                <a href="../templates/assinatura.html">Seja Premium</a>
+            </li>
+
+            <li>
+                <a href="../templates/config.html">
+                    <i class="fas fa-cog icone-engrenagem"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="../midia/logo/logo.png" alt="sortu fácil logo">
+        </a>
+        <div class="icone-conta">
+            <a href="#" id="abrir-modal-conta">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+
+
+
+
+    <main id="conteiner-central">
+        <!-- Status da rifa -->
+        <section class="status-da-rifa">
+            <h6>Status da Rifa:  <samp id="status">Carregando...</samp></h6>
+        </section>
+
+        <!-- Dados da sessao um -->
+        <section class="sessao1">
+            <!--Dados Da Rifa-->
+            <div class="dados-rifa">
+                <h2>Nº SERIAL <samp id="serial-number">0000.000.0000.000</samp></h2>
+            </div>
+            <!--Dados Das Cotas-->
+            <div class="dados-cotas">
+                <!-- Informações das cotas disponiveis-->
+                <div class="qta-disponivel">
+                    <h3>COTAS DISPONIVEIS</h3>
+                    <p><samp id="cotas-disponiveis">00</samp> / <samp class="cotas-totais">00</samp> 
+                    <i class="fas fa-ticket-alt"></i></p>
+                </div>
+                <!-- Informações das cotas reservadas -->
+                <div class="qta-reservada">
+                    <h3>COTAS RESERVADAS</h3>
+                    <p><samp id="cotas-reservadas">00</samp> / <samp class="cotas-totais">00</samp> 
+                    <i class="fas fa-ticket-alt"></i></p>
+                </div>
+                <!-- Informações das cotas pagas -->
+                <div class="qta-paga">
+                    <h3>COTAS PAGAS</h3>
+                    <p><samp id="cotas-pagas">00</samp> / <samp class="cotas-totais">00</samp> 
+                    <i class="fas fa-ticket-alt"></i></p>
+                </div>
+            </div>
+        </section>
+        <!-- Sessao dois -->
+        <section class="sessao2">
+
+            <!-- Area de imagem da rifa -->
+            <div class="imagem-da-rifa">
+                <!-- Container da imagem -->
+                <div class="imagem-rifa-container">
+                    <img class="imagem-rifa" src="../midia/erro-imagem/img-quebrada.png" alt="Imagem da Rifa" />
+                </div>
+                
+                <!-- Controles de navegação (serão mostrados via JS se necessário) -->
+                <div class="controles-imagem">
+                    <button class="controle-anterior" aria-label="Imagem anterior">‹</button>
+                    <button class="controle-proximo" aria-label="Próxima imagem">›</button>
+                </div>
+                
+                <!-- Indicadores de imagem (serão injetados via JS se necessário) -->
+                <div class="indicadores-imagem">
+                    <!-- Os indicadores serão gerados dinamicamente -->
+                </div>
+                
+                <!-- Título da rifa -->
+                <div class="titulo-nome-rifa">
+                    <h4 id="titulo-rifa">0000.000.0000.000</h4>
+                </div>
+            </div>
+            
+            <div class="aguardando-pagamentos" style="display: none;">
+                <samp id="aguardando-pagamentos-texto">Atenção: Aguardando pagamento de cotas reservadas</samp>
+            </div>
+            
+            <div class="conteiner-tabela-cota">
+                <table>
+                    <tbody id="tabela-body">
+                        
+                        <!-- LINHA MODELO (TEMPLATE) -->
+                        <tr class="linha-modelo">
+
+                            <!-- CÉLULA ÚNICA E FLEXÍVEL -->
+                            <td class="celula">
+
+                                <!-- CONTAINER DE CONTEÚDO -->
+                                <div class="conteudo-celula">
+
+                                    <!-- TEXTO / NÚMERO -->
+                                    <span class="texto"></span>
+                                    <!-- GRUPO DE 4 par -->
+                                    <div class="grupo-25">
+                                        <samp class="par1"></samp>
+                                        <samp class="par2"></samp>
+                                        <samp class="par3"></samp>
+                                        <samp class="par4"></samp>
+                                    </div>
+
+                                    <!-- IMAGEM -->
+                                    <img class="imagem" src="" alt="" />
+                                    <h5 class="nome-animal"></h5>
+                                    <div class="marcador">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                
+                <div class="legenda-da-tabela">
+                    <div class="item-legenda">
+                        <div class="indicador disponivel"></div>
+                        <p>Disponível</p>
+                    </div>
+                    <div class="item-legenda">
+                        <div class="indicador reservado"></div>
+                        <p>Reservado</p>
+                    </div>
+                    <div class="item-legenda">
+                        <div class="indicador pago"></div>
+                        <p>Pago</p>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Ações rápidas -->
+            <div class="acoes-rapidas">
+                <i class="fas fa-ellipsis-h"></i>
+                <i class="fa-solid fa-download"></i>
+            </div>
+
+            <div class="conteiner-painel-selecao">
+
+                <form action="#">
+
+                    <section class="display-de-cotas">
+                        <div class="cotas-selecionadas">
+                            <h3>COTAS SELECIONADAS:</h3>
+                            <p id="cotas-selecionadas-texto">Nenhuma cota selecionada</p>
+                        </div>
+                        <div class="area-de-calculo">
+                            <h6>VALOR UNITÁRIO:</h6>
+                            <span id="valor-uni-cota">10.00</span>
+                            <h6>QUANTIDADE DE COTAS:</h6>
+                            <samp id="qtd-de-cota">2</samp>
+                            <h6>VALOR TOTAL:</h6>
+                            <samp id="valor-total">20.00</samp>
+                        </div>
+                        <div class="area-acao">
+                            <select name="texto" id="status-cota">
+                                <option value="" disabled selected>Alterar status da cota</option>
+                                <option value="reservar">Reservar Cota(s)</option>
+                                <option value="pagar">Marcar como Paga(s)</option>
+                                <option value="liberar">Liberar Cota(s)</option>
+                            </select>
+                            <h4>Dados do Cliente</h4>
+                            <input type="text" id="nome-cliente" placeholder="Nome do Cliente" />
+                            <input type="text" id="contato-cliente" placeholder="Contato do Cliente" />
+
+
+                            <button type="button" id="btn-atualizar-status">Atualizar Status</button>
+                        </div>
+                    </section>
+
+
+
+                </form>
+            </div>
+        </section>
+
+        <section class="sessao3">
+            <div class="titulo-da-sessao">
+                <h3>INFORMAÇÕES ADICIONAIS</h3>
+            </div>
+
+            <div class="dados-primarios">
+                <div class="info-primaria">
+                    <h4>DATA DE CRIAÇÃO:</h4>
+                    <p id="data-criacao">00/00/0000</p>
+                </div>
+                <div class="info-primaria">
+                    <h4>DATA DO SORTEIO:</h4>
+                    <p id="data-sorteio">00/00/0000</p>
+                </div>
+                <div class="info-primaria">
+                    <h4>VALOR DA COTA:</h4>
+                    <p id="valor-cota">R$ 0,00</p>
+                </div>
+                <div class="info-primaria">
+                    <h4>TOTAL DE COTAS:</h4>
+                    <p id="total-cotas">00</p>
+                </div>
+            </div>
+
+            <div class="dados-secundarios">
+                <div class="info-secundaria">
+                    <h4>NOME DO SORTEIO:</h4>
+                    <p id="nome-sorteio">Nome do Sorteio</p>
+                </div>
+                <div class="info-secundaria">
+                    <h4>DESCRIÇÃO DO SORTEIO:</h4>
+                    <p id="descricao-sorteio">Descrição do Sorteio</p>
+                </div>
+                <div class="info-secundaria">
+                    <h4>PREMIAÇÃO:</h4>
+                    <p id="premiacao-sorteio">Premiação do Sorteio</p>
+                </div>
+            </div>
+
+            <div class="dados-organizador">
+                <div class="info-organizador">
+                    <h4>NOME DO ORGANIZADOR:</h4>
+                    <p id="nome-organizador">Nome do Organizador</p>
+                    <h4>EMAIL DO ORGANIZADOR</h4>
+                    <P id="email-organizador"></P>
+            </div>
+
+            <section class="funcoes-auxiliares">
+                <nav>
+                    <ul>
+                        <li>Cancelar Rifa</li>
+                        <li>Adiar sortio</li>
+                        <li>Baixar relatório</li>
+                    </ul>
+                </nav>
+            </section>
+
+        </section>
+        
+
+    </main>
+    
+    <div class="modal-finalizar-rifa" id="modal-finalizar-rifa"></div>
+    <div class="modal-compartilhar-rifa" id="modal-compartilhar"></div>
+    <div class="modal-conta" id="container-modal-conta"></div>
+    <div class="modal-erros" id="modal-erros"></div>
+
+
+    <div class="espaco-anuncio">
+        <!-- Espaço reservado para anúncios -->
+         
+    </div>
+
+
+
+    <!-- Footer Lobby -->
+    <footer class="footer-lobby">
+        <div class="footer-left">
+            <img src="../midia/logo/logo.png" alt="Sortu Fácil" class="footer-logo">
+            <span>© 2026 Sortu Fácil</span>
+        </div>
+
+        <div class="footer-right">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+
+    <!-- Importações JS -->
+    <script type="module" src="../js/gestao-rifa/importacoes.js"></script>
+
+
+
+
+
+</body>
+</html>

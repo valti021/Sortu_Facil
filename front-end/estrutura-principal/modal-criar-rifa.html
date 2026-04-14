@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Rifa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+
+
+
+
+</head>
+<body>
+
+<!-- Modal -->
+<div id="modal-criar-rifa" class="modal-criar-rifa">
+    <div class="modal-content-form-rifa">
+
+        <span id="fechar-modal-rifa" class="fechar">&times;</span>
+        <h2>Criar Nova Rifa</h2>
+
+        <div id="erro-geral" class="erro-geral" style="display: none;"></div>
+
+        <!-- Labels no lugar dos inputs hidden -->
+        <div class="label-organizador-container">
+            <label class="email-organizador">Email do organizador: <strong id="email-label"></strong></label>
+            <label class="nome-organizador">Organizador: <strong id="organizador-label"></strong></label>
+        </div>
+
+        <form id="form-criar-rifa" enctype="multipart/form-data">
+
+
+            <label for="nome_rifa">Nome da Rifa:</label>
+            <input type="text" id="nome_rifa" name="nome_rifa" >
+            
+            <label for="descricao">Descrição da Rifa:</label>
+            <textarea id="descricao" name="descricao"></textarea>
+            <!-- Visibilidade -->
+            <label for="visibilidade">Visibilidade:</label>
+            <select name="visibilidade" id="visibilidade">
+                <option value="">Carregando...</option>
+            </select>
+
+            <!-- Tema da rifa -->
+            <label for="tema_rifa">Tema da Rifa:</label>
+            <select id="tema_rifa" name="tema_rifa" >
+                <option value="">Carregando...</option>
+            </select>
+
+
+            
+            <div class="data-sorteio-container">
+                <label>Data e Horário do sorteio:</label>
+                
+                <!-- PASSO 1: Seleção dos filtros (dia da semana, mês, ano, horário) -->
+                <div class="select-group">
+                    <label style="font-size: 12px; color: #666; margin-bottom: 10px; display: block;">Selecione os filtros:</label>
+                    <div class="filtros-row">
+                        <div class="filtro-column">
+                            <label for="dia_semana" style="font-size: 13px;">Dia da semana:</label>
+                            <select id="dia_semana" name="dia_semana" >
+                                <option value="">Carregando...</option>
+                            </select>
+
+                        </div>
+                        
+                        <div class="filtro-column">
+                            <label for="mes" style="font-size: 13px;">Mês:</label>
+                            <select id="mes" name="mes" >
+                                <option value="">Carregando...</option>
+                            </select>
+
+                        </div>
+                        
+                        <div class="filtro-column">
+                            <label for="ano" style="font-size: 13px;">Ano:</label>
+                            <select id="ano" name="ano" >
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filtro-column">
+                            <label for="horario" style="font-size: 13px;">Horário:</label>
+                            <select id="horario" name="horario_sorteio" >
+                                <option value="">Carregando...</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PASSO 2: Data e horário final selecionados -->
+                <div class="data-final-combined">
+                    <label style="font-size: 12px; color: #666; margin-bottom: 10px; display: block;">Data e horário exatos:</label>
+                    <div class="data-horario-row">
+                        <div class="data-column">
+                            <label for="data_sorteio">Data:</label>
+                            <select id="data_sorteio" name="data_sorteio"  disabled>
+                                <option value="">Carregando...</option>
+                            </select>
+
+                        
+                        <!-- Horário selecionado pelo usuário no seletor acima (enviado como `horario_sorteio`) -->
+                    </div>
+                </div>
+            </div>
+            <!-- Pagamento -->
+            <label for="modelo_pagamento">Modelo de pagamento:</label>
+            <select name="modelo_pagamento" id="modelo_pagamento">
+                <option value="">Carregando...</option>
+            </select>
+
+            
+            <div id="campo-pix">
+                <label for="chave_pix">Chave PIX:</label>
+                <input type="text" id="chave_pix" name="chave_pix" placeholder="Telefone ou CPF">
+            </div>
+            <!-- Tipo de sorteio -->
+            <label for="tipo_sorteio">Tipo de sorteio:</label>
+            <select name="tipo_sorteio" id="tipo_sorteio">
+                <option value="">Carregando...</option>
+            </select>
+
+            
+            <!-- Quantidade de Prêmios -->
+            <label for="quantidade_premios">Quantidade de prêmios:</label>
+            <select id="quantidade_premios" name="quantidade_premios" >
+                <option value="">Carregando...</option>
+            </select>
+
+            <!--Campo de input de nomes de premios(que devem ser clonados com js )-->
+            <div class="nome-premio">
+                <label for="nome-premio">Nome do prêmio <samp class="qt-premio"></samp>:</label>
+                <input type="text" class="nome" name="nome" placeholder="Ex: Carro 0km">
+            </div>
+
+            
+            <!-- Nome do 1º Prêmio 
+            <label for="nome_premio_um">Nome do 1º prêmio:</label>
+            <input type="text" id="nome_premio_um" name="nome_premio_um" maxlength="150" placeholder="Ex: iPhone 15" >
+            
+            Nome do 2º Prêmio (inicialmente oculto) 
+            <div id="campo-premio-dois" style="display: none;">
+                <label for="nome_premio_dois">Nome do 2º prêmio:</label>
+                <input type="text" id="nome_premio_dois" name="nome_premio_dois" maxlength="150" placeholder="Ex: Samsung Galaxy S24">
+            </div> -->
+            
+            
+            
+            
+            <!-- INPUT DE IMAGEM ESTILIZADO -->
+            <label for="imagem">Imagem do prêmio (PNG/JPG):</label>
+            <div class="file-input-wrapper">
+                <input 
+                type="file" 
+                id="imagem" 
+                name="imagem" 
+                accept="image/png,image/jpeg" 
+                 
+                class="file-input"
+                >
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                    </div>
+                    <h3 class="upload-title">Arraste a imagem aqui</h3>
+                    <p class="upload-subtitle">ou</p>
+                    <div class="browse-button">Clique aqui e importe</div>
+                    <p class="formats-info">Formatos suportados: PNG e JPG</p>
+                </div>
+            </div>
+            <!-- Área de erro da imagem -->
+            <div id="erro-imagem" 
+            style="color: #d32f2f; 
+                        font-size: 14px; 
+                        font-weight: 600; 
+                        margin-top: 8px; 
+                        display: none; 
+                        font-family: 'Poppins', sans-serif;">
+            </div>
+            
+            
+            <div class="file-info" id="fileInfo"></div>
+            <div class="preview-container" id="previewContainer">
+                <label style="margin-bottom: 5px;">Pré-visualização:</label>
+                <img class="preview-image" id="previewImage">
+            </div>
+            
+            
+            <!-- Tipo de dezenas -->
+            <label class="quantidade-dezenas" for="tipo_quantidade_dezenas">Quantidade de dezenas:</label>
+            <select id="tipo_quantidade_dezenas" name="tipo_quantidade_dezenas">
+                <option value="">Carregando...</option>
+            </select>
+
+
+            <label class="valor-dezena" for="valor_dezena">Valor da dezena (R$):</label>
+            <input type="number" step="0.01" id="valor_dezena" name="valor_dezena" >
+
+
+            <label for="valor_premio">Valor do prêmio (R$):</label>
+            <input type="number" step="0.01" id="valor_premio" name="valor_premio" >
+            
+            <!-- Lucro final (hidden para salvar) -->
+            <input type="hidden" name="lucro_final" id="lucro_final">
+
+            <div id="resultado-calculo">
+                <!-- Estrutura para o JS preencher -->
+                <div>
+                    <strong>Quantidade de números:</strong> <span id="qtd-numeros">0</span>
+                </div>
+                <div>
+                    <strong>Valor por dezena:</strong> R$ <span id="valor-dezena">0.00</span>
+                </div>
+                <div>
+                    <strong>Valor do prêmio:</strong> R$ <span id="valor-premio">0.00</span>
+                </div>
+                <hr style="margin: 5px 0;">
+                
+                <!-- Parte condicional - TODAS AS MENSAGENS JÁ NO HTML (inicialmente escondidas) -->
+                <div id="msg-completo" style="display: none;">
+                    <em>Digite o valor da dezena e do prêmio para ver o cálculo completo</em>
+                </div>
+                
+                <div id="msg-sem-premio" style="display: none;">
+                    <div><strong>Arrecadação Total:</strong> R$ <span id="arrecadacao-sem-premio">0.00</span></div>
+                    <div><em>Digite o valor do prêmio para ver o lucro final</em></div>
+                </div>
+                
+                <div id="msg-sem-dezena" style="display: none;">
+                    <div><strong>Valor do Prêmio:</strong> R$ <span id="valor-premio-fixo">0.00</span></div>
+                    <div><em>Digite o valor da dezena para ver o lucro final</em></div>
+                </div>
+                
+                <div id="detalhes-calculo" style="display: none;">
+                    <div><strong>Arrecadação Total:</strong> R$ <span id="arrecadacao-total">0.00</span></div>
+                    <div><strong>Valor do Prêmio:</strong> R$ <span id="valor-premio-calculo">0.00</span></div>
+                    <div>
+                        <strong id="lucro-estimado-texto" style="color: #2e7d32;">
+                            Lucro estimado:
+                        </strong>
+                        R$ <span id="valor-lucro">0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <button class="botao-salvar-rifa" type="submit">Criar Rifa</button>
+        </form>
+    </div>
+</div>
+
+        <!-- Modal de recorte (moveido do JS) -->
+        <div id="modal-recorte-imagem" class="modal-recorte" style="display: none;">
+            <div class="modal-recorte-content">
+                <div class="modal-recorte-header">
+                    <h3>Recortar Imagem (1080×1080)</h3>
+                    <button id="fechar-modal-recorte" class="modal-recorte-fechar">×</button>
+                </div>
+
+                <div class="modal-recorte-info">
+                    <div><strong>Prêmio:</strong> <span id="recorte-premio-numero">1</span></div>
+                    <div class="modal-recorte-help">Selecione a área da imagem para recortar. O recorte será quadrado (1080×1080 pixels).</div>
+                </div>
+
+                <div class="modal-recorte-body">
+                    <div class="modal-recorte-canvas">
+                        <div id="container-recorte"><!-- Cropper.js será inicializado aqui --></div>
+                    </div>
+                    <div class="modal-recorte-preview">
+                        <strong>Preview do recorte:</strong>
+                        <div id="preview-recorte" class="preview-recorte">Preview aqui</div>
+                        <div class="modal-recorte-instructions">
+                            <div>• Clique e arraste para mover</div>
+                            <div>• Arraste as bordas para redimensionar</div>
+                            <div>• Use a roda do mouse para zoom</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-recorte-actions">
+                    <button id="btn-cancelar-recorte" class="btn-cancelar-recorte">Cancelar</button>
+                    <button id="btn-aplicar-recorte" class="btn-aplicar-recorte">Aplicar Recorte</button>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

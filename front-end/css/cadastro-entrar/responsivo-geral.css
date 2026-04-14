@@ -1,0 +1,26 @@
+/* ===== RESPONSIVIDADE — GERAL ===== */
+
+@media (max-width: 1024px) {
+    .layout-geral {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+    .layout-geral {
+        min-height: auto;
+        height: auto;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .layout-geral {
+        min-height: auto;
+        height: auto;
+        box-sizing: border-box;
+    }
+}

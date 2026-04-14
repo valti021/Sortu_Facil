@@ -1,0 +1,486 @@
+/* Container principal da imagem da rifa com corte vertical */
+.imagem-da-rifa {
+    position: relative;
+    width: 100%;
+    
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background-color: var(--verde-fundo-claro);
+    height: 650px; /* Altura fixa menor que 1080px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container para imagem com corte vertical */
+.imagem-rifa-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--verde-fundo-claro) 0%, #e8f5e9 100%);
+}
+
+/* Imagem com corte vertical - ocupa 100% horizontal mas corta verticalmente */
+.imagem-rifa {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    object-fit: cover; /* Corta a imagem para preencher o container */
+    object-position: center 50%; /* Ajusta qual parte da imagem é mostrada (30% do topo) */
+    display: block;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Classe para quando há múltiplas imagens */
+.imagem-da-rifa.com-multiplas-imagens .imagem-rifa {
+    object-position: center 25%; /* Posição diferente para múltiplas imagens */
+}
+
+
+
+
+/* Controles de navegação entre imagens - visíveis apenas quando há múltiplas imagens */
+.controles-imagem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Inicialmente oculto */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.imagem-da-rifa.com-multiplas-imagens .controles-imagem {
+    display: flex; /* Mostra apenas quando há múltiplas imagens */
+}
+
+.controle-anterior, .controle-proximo {
+    pointer-events: all;
+    background-color: rgba(76, 175, 80, 0.9);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    color: var(--cor-branco);
+    font-size: 28px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.controle-anterior:hover, .controle-proximo:hover {
+    background-color: var(--verde-navbar);
+    transform: scale(1.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.controle-anterior:active, .controle-proximo:active {
+    transform: scale(0.95);
+}
+
+/* Indicadores de imagem - visíveis apenas quando há múltiplas imagens */
+.indicadores-imagem {
+    position: absolute;
+    bottom: 100px; /* Acima do título */
+    left: 0;
+    width: 100%;
+    display: none; /* Inicialmente oculto */
+    justify-content: center;
+    gap: 12px;
+    padding: 10px;
+    z-index: 10;
+}
+
+.imagem-da-rifa.com-multiplas-imagens .indicadores-imagem {
+    display: flex; /* Mostra apenas quando há múltiplas imagens */
+}
+
+.indicador {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.indicador:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.3);
+}
+
+.indicador.ativo {
+    background-color: var(--verde-engrenagem-destaque);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(0, 200, 50, 0.8);
+    border-color: var(--cor-branco);
+}
+
+/* Contador de imagens - visível apenas quando há múltiplas imagens */
+.contador-imagem {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 173, 14, 0.9);
+    color: var(--cor-branco);
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: none; /* Inicialmente oculto */
+}
+
+.imagem-da-rifa.com-multiplas-imagens .contador-imagem {
+    display: block; /* Mostra apenas quando há múltiplas imagens */
+}
+
+/* Overlay decorativo */
+.imagem-da-rifa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        transparent 0%, 
+        rgba(76, 175, 80, 0.08) 30%, 
+        rgba(56, 142, 60, 0.05) 70%, 
+        transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* Efeito de zoom suave ao passar o mouse */
+.imagem-da-rifa:hover .imagem-rifa {
+    transform: scale(1.03);
+}
+
+
+
+/* Efeito de transição entre imagens */
+.imagem-rifa.saindo {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.imagem-rifa.entrando {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+/* Classe para controlar posição do corte vertical */
+.corte-superior .imagem-rifa {
+    object-position: center 20%; /* Mostra mais a parte superior */
+}
+
+.corte-central .imagem-rifa {
+    object-position: center 50%; /* Mostra o centro */
+}
+
+.corte-inferior .imagem-rifa {
+    object-position: center 80%; /* Mostra mais a parte inferior */
+}
+/* ===============================
+   TÍTULO DA RIFA
+=================================     */
+
+.titulo-nome-rifa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--verde-degrade);
+    padding: 1rem 1.5rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: var(--cor-branco);
+    box-shadow: var(--sombra-suave);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.titulo-nome-rifa h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* ===============================
+   CONTAINER DA TABELA
+================================= */
+
+.conteiner-tabela-cota {
+    background: var(--verde-fundo-claro);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+
+
+
+
+/* ===============================
+   TABELA EM GRID (10 COLUNAS)
+================================= */
+
+.conteiner-tabela-cota table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0.6rem;
+}
+
+.conteiner-tabela-cota tbody {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 0.6rem;
+}
+
+/* Cada linha vira apenas um container lógico */
+.linha-modelo {
+    display: contents;
+}
+
+/* ===============================
+   CÉLULA / CARD
+================================= */
+
+.celula {
+    background: var(--cor-branco);
+    border-radius: 10px;
+    box-shadow: var(--sombra-suave);
+    border-left: 5px solid var(--primary-color);
+    padding: 0.6rem;
+    transition: var(--transition);
+}
+
+.celula:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+/* ===============================
+   CONTEÚDO DA CÉLULA
+================================= */
+
+.conteudo-celula {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    gap: 0.3rem;
+}
+
+/* ===============================
+   TEXTO (TOPO DIREITO)
+================================= */
+
+.texto {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* ===============================
+   GRUPO DE PARES (ESQUERDA)
+================================= */
+
+.grupo-25 {
+    grid-column: 3;
+    grid-row: 1 / span 3;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    color: var(--primary-color);
+}
+
+.grupo-25 samp {
+    font-size: 0.5rem;
+    font-weight: 600;
+    border: 1px solid var(--primary-color);
+    padding: 0.1rem 0.4rem;
+    border-radius: 6px;
+}
+
+/* ===============================
+   IMAGEM (CENTRO)
+================================= */
+
+.imagem {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    border-radius: 6px;
+
+}
+
+/* ===============================
+   NOME DA IMAGEM (ABAIXO)
+================================= */
+
+.nome-animal {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: center;
+    margin: 0;
+    font-size: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    max-width: 100%;
+    word-break: break-word;
+}
+
+
+/* ===============================
+   RESPONSIVO
+================================= */
+
+@media (max-width: 1200px) {
+    .conteiner-tabela-cota tbody {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .conteiner-tabela-cota tbody {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .conteiner-tabela-cota tbody {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+/* ===============================
+   STATUS DAS COTAS
+================================= */
+
+.celula.disponivel {
+    border-left-color: var(--primary-color);
+}
+
+.celula.reservada {
+    border-left-color: #ff8102; /* mesma cor que era o fundo */
+}
+
+.celula.paga {
+    border-left-color: #0088ff; /* mesma cor que era o fundo */
+    /*
+    pointer-events: none;
+    cursor: default; */
+}
+
+/* Texto riscado para paga */
+.celula.paga .texto {
+    text-decoration: line-through;
+}
+
+/* Imagem levemente apagada */
+.celula.paga .imagem {
+    opacity: 0.6;
+}
+
+
+/* ===============================
+   CORES INTERNAS POR STATUS
+================================= */
+
+/* ---------- RESERVADA ---------- */
+.celula.reservada .texto,
+.celula.reservada .nome-animal {
+    color: #ff8102; /* mesma cor da borda */
+}
+
+.celula.reservada .grupo-25 samp {
+    color: #ff8102;
+    border-color: #ff8102;
+}
+
+/* ---------- PAGA ---------- */
+.celula.paga .texto,
+.celula.paga .nome-animal {
+    color: #0088ff; /* mesma cor da borda */
+}
+
+.celula.paga .grupo-25 samp {
+    color: #0088ff;
+    border-color: #0088ff;
+    opacity: 0.8;
+}
+
+
+/* ================================
+   ESTILOS DO MARCADOR DE CHECK
+==================================== */
+
+/* Estilos gerais para o marcador */
+.marcador {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: none; /* Inicialmente oculto */
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Estilo para checkmark quando o status é 'disponível' */
+.marcador.disponivel {
+    background-color: #28a745; /* Fundo verde */
+    color: white;
+}
+
+/* Estilo para checkmark quando o status é 'reservado' */
+.marcador.reservado,
+.marcador.reservada {
+    background-color: #ff8102; /* Fundo amarelo */
+    color: white; /* Ícone branco */
+}
+
+/* Estilo para checkmark quando o status é 'pago' */
+.marcador.pago,
+.marcador.paga {
+    background-color: #6c757d; /* Fundo cinza */
+    color: white;
+}

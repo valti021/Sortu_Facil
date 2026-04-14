@@ -1,0 +1,10 @@
+{
+    "logado": true,
+    "id": 23,
+    "nome": "Beatriz",
+    "sobrenome": "Helena Martins",
+    "email": "exemplo@gmail.com",
+    "permissao": "usuario",
+    "assinatura": "inativa",
+    "imagem_perfil": "../demo/avatar/avatar.jpg"
+}

@@ -1,0 +1,217 @@
+/* =========================
+   CARD PRINCIPAL
+========================= */
+
+.lista-rifas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+
+}
+
+
+.rifa-card-example {
+    display: flex;
+    width: 100%;
+    max-width: 320px;
+
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--primary-color);
+}
+
+@media (max-width: 345px) {
+    .rifa-card-example {
+        display: flex;
+        max-width: 200px;
+    }
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+.rifa-card-example h4 {
+    color: var(--primary-color);
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--verde-principal);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+
+/* =========================
+   IMAGEM / SLIDER
+========================= */
+.img-premio {
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+}
+
+.img-container {
+    padding: 35px;
+    max-width: 260px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* BOTÕES SOBREPOSTOS */
+.btn-left,
+.btn-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    color: var(--verde-principal);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    transition: 0.2s ease;
+    display: none;
+}
+
+.btn-left {
+    left: 5px;
+}
+
+.btn-right {
+    right: 5px;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.cont-navegacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0 auto;
+}
+
+.indentificador-de-paginacao {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 10px;
+
+}
+
+.indentificador-de-paginacao span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indentificador-de-paginacao span.ativo {
+    background: var(--verde-escuro);
+}
+
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+.descricao {
+    width: 100%;
+    padding: 10px;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    border-radius: 8px;
+    border: 1px solid var(--verde-principal);
+    margin: 10px 0 20px 0 ;
+}
+
+.descricao .texto {
+    color: var(--gray-color);
+    line-height: 1.4;
+}
+
+/* =========================
+   DETALHES
+========================= */
+.grup-details {
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        var(--primary-color) 0%,
+        var(--primary-dark) 100%
+    );
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    color: var(--cor-branco);
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   LINK GERENCIAR
+========================= */
+.link-gerenciar {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.gerenciar {
+    color: var(--verde-principal);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.gerenciar:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+/* =========================
+   BREAKPOINTS
+========================= */
+
+/* Tablets */
+@media (min-width: 600px) {
+    .rifa-card-example {
+        padding: 18px;
+    }
+
+    .img-container {
+        max-width: 300px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .rifa-card-example {
+        padding: 20px;
+    }
+
+
+}

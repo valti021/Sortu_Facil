@@ -1,0 +1,73 @@
+/* Modal Finalizar Adiar Styles */
+
+/* =============================== 
+   Estilos específicos para o modal de adiar rifa
+================================ */
+.modal-finalizar-adiar {
+  border-top: 6px solid var(--accent-color);
+}
+
+.fechar-modal{
+    display: flex;
+    justify-content: end;
+    margin: 10px;
+    padding: 8px;
+}
+
+.fa-solid.fa-xmark {
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #2b2a2a;
+    transition: color 0.2s ease;
+}
+
+.fa-solid.fa-xmark:hover {
+    color: #555;
+}
+
+
+.modal-finalizar-adiar label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--cinza-titulo);
+}
+
+.modal-finalizar-adiar select {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+#btn-adiar-rifa {
+  margin-top: 1.5rem;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#btn-cancelar-adiar {
+  margin-top: 1.5rem;
+  background: var(--cor-vermelho);
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+.btn-acoes{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}

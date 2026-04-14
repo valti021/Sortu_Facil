@@ -1,0 +1,8 @@
+#cookie-consent{position:fixed;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);color:#fff;padding:12px;z-index:9999;display:flex;align-items:center;justify-content:center;font-family:inherit}
+.cookie-consent-inner{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cookie-text{margin:0;font-size:15px}
+.cookie-actions{display:flex;gap:8px}
+.cookie-actions button{background:#fff;color:#111;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;font-weight:600}
+.cookie-actions .btn-recusar{background:transparent;border:1px solid rgba(255,255,255,0.2);color:#fff}
+.cookie-actions .btn-mais-tarde{background:transparent;border:1px solid rgba(255,255,255,0.15);color:#fff}
+@media(max-width:640px){.cookie-consent-inner{flex-direction:column;align-items:flex-start}.cookie-actions{width:100%;justify-content:space-between}}

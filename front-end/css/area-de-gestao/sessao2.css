@@ -1,0 +1,62 @@
+/* ===============================
+   importação de variáveis CSS
+================================= */
+
+@import url('./conteiner-da-tabela.css');
+@import url('./legenda-da-tabela.css');
+@import url('./painel-selecao-cota.css');
+
+
+/* ===============================
+   SESSÃO 2 – TABELA DE COTAS
+================================= */
+
+.sessao2 {
+   width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+/* ===============================
+   SESSÃO 2 – AÇÕES RÁPIDAS*/
+
+.acoes-rapidas {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ===============================
+   SESSÃO 2 – ÍCONE DE MAIS OPÇÕES
+================================= */
+
+.sessao2 i.fas.fa-ellipsis-h {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+
+/* ===============================
+   SESSÃO 2 – ÍCONE DE DOWNLOAD
+================================= */
+.sessao2 i.fa-download {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-right: 1.5rem;
+    transition: var(--transition);
+}
+
+
+
+
+
+
+
+
+
+

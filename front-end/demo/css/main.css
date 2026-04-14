@@ -1,0 +1,50 @@
+@import url('../../css/colors.css');
+
+#mensagem-demo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.demo{
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.demo h2 {
+    color: var(--cinza-titulo);
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+}
+
+.demo p {
+    color: var(--cinza-titulo);
+    margin: 0 0 15px 0;
+    font-size: 1rem;
+}
+
+.demo .btn {
+    background-color: var(--verde-principal);
+    color: var(--cor-branco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.demo .btn:hover {
+    background-color: var(--verde-escuro);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.demo .btn:active {
+    background-color: var(--verde-engrenagem-active);
+    transform: translateY(0);
+}
