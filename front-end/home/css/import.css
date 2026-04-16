@@ -1,0 +1,19 @@
+/* Importações da tela home */
+@import url('reset.css');
+@import url('variables.css');
+@import url('./nav/topo.css');
+@import url('./header/header.css');
+@import url('./body/main.css');
+@import url('./body/tabs-container.css');
+@import url('./footer/footer.css');
+
+/* Importações de modais */
+@import url('./conta/conta.css');
+
+/* Importações da tela cookie */
+@import url('../../cookie/css-cookie/cookie.css');
+
+
+/* Importações da tela rifa */
+
+/* Importações da tela rifa */

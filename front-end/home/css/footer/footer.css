@@ -1,0 +1,47 @@
+/* Footer Lobby */
+.footer-lobby {
+ background-color: var(--dark-color);
+    color: #bbb;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+/* Lado esquerdo */
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo {
+    height: 26px;
+    opacity: 0.9;
+}
+
+/* Lado direito (redes sociais) */
+.footer-right {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-right a {
+    color: #bbb;
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+.footer-right a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 576px) {
+    .footer-lobby {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

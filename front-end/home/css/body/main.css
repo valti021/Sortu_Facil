@@ -1,0 +1,101 @@
+/* NAV DAS ABAS */
+#nav-aba {
+  width: 55%;
+  margin: 15px auto;
+  background: var(--cor-branco);
+  box-shadow: var(--shadow);
+  padding: 6px;
+  overflow: hidden;
+}
+
+/* LISTA */
+#nav-aba ul {
+  display: flex;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* LINKS */
+#nav-aba ul li {
+  flex: 1;
+}
+
+#nav-aba ul li a {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--dark-color);
+
+  position: relative;
+  z-index: 2;
+
+  transition: all 0.3s ease;
+}
+
+/* HOVER (efeito leve de levantar) */
+#nav-aba ul li a:hover {
+  transform: translateY(-2px);
+  color: var(--primary-color);
+}
+
+/* ATIVO */
+#nav-aba ul li a.ativa {
+  color: var(--cor-branco);
+}
+
+/* INDICADOR DESLIZANTE */
+#nav-aba ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--verde-degrade);
+   border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  z-index: 1;
+
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* POSIÇÕES */
+#nav-aba ul.rifa::before {
+  transform: translateX(0%);
+}
+
+#nav-aba ul.bingo::before {
+  transform: translateX(100%);
+}
+
+/* EFEITO DE CLIQUE */
+#nav-aba ul li a:active {
+  transform: scale(0.95);
+}
+
+/* CONTEÚDO */
+#conteudo-aba {
+  margin-top: 20px;
+  padding: 25px;
+  background: var(--cor-branco);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+
+  animation: fadeSlide 0.4s ease;
+}
+
+/* ANIMAÇÃO MAIS BONITA */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

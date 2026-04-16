@@ -1,0 +1,38 @@
+<!-- modal-conta.html -->
+<div id="modal-conta" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="modal-close">&times;</span>
+        </div>
+        
+        <div class="modal-body">
+            <!-- Conteúdo dinâmico será carregado aqui -->
+        </div>
+    </div>
+</div>
+
+<!-- Template para usuário não logado (escondido) -->
+<div id="template-nao-logado" style="display: none;">
+    <h2>Acesso necessário</h2>
+    <p>Faça login para acessar sua conta.</p>
+    <a href="../index.html" class="btn btn-login">Entrar</a>
+</div>
+
+<!-- Template para usuário logado (escondido) -->
+<div id="template-logado" style="display: none;">
+    <h2>Minha Conta</h2>
+    <div class="user-info">
+        <div class="profile-section">
+            <img id="user-imagem" src="" alt="Foto do perfil" class="user-profile-image">
+        </div>
+        <p><strong>Nome:</strong> <span id="user-nome-completo"></span></p>
+        <p><strong>Email:</strong> <span id="user-email"></span></p>
+    </div>
+    <button id="btn-logout" class="btn btn-sair">Sair</button>
+</div>
+
+<!-- Template de loading (escondido) -->
+<div id="template-loading" style="display: none;">
+    <div class="loading-spinner"></div>
+    <p>Carregando informações...</p>
+</div>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortu Fácil - Home</title>
+    <link rel="icon" type="image/png" href="../midia/icon/favicon-180x180.png">
+
+    <link rel="stylesheet" href="./css/import.css">
+    <link rel="stylesheet" href="../avisos/css/main.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Nunito&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+</head>
+<body>
+
+    <!-- Navegação principal da pagina -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="../estrutura-principal/main.html">Início</a></li>
+            <li><a href="#">Resultado</a></li>
+            <li><a href="#">Sortu</a></li>
+
+            <li id="link-master" hidden>
+                <a href="#">Master</a>
+            </li>
+
+            <li id="link-assinatura" hidden>
+                <a href="#">Seja Premium</a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fas fa-cog icone-engrenagem"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Cabeçalho da pagina -->
+    <header>
+        <a href="../estrutura-principal/main.html" class="logo">
+            <img src="../midia/logo/logo.png" alt="sortu fácil logo">
+        </a>
+        <div class="icone-conta">
+            <a href="#" id="abrir-modal-conta">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="espaco-anuncio">
+        <!-- Espaço reservado para anúncios -->
+    </div>
+
+    <div id="pop-up-avisos">
+        <!-- pop-up de avisos será inserido aqui -->
+    </div>
+
+    <!-- Navegação por abas -->
+    <nav id="nav-aba">
+            <ul>
+                <li><a href="#" data-aba="rifa">Rifas</a></li>
+                <li><a href="#" data-aba="bingo">Bingos</a></li>
+            </ul>
+    </nav>
+
+    <section id="conteudo-aba">
+        <!-- O conteúdo das abas será carregado dinamicamente via JavaScript -->
+    </section>
+
+
+
+
+
+
+    <!-- Modal de conta -->
+    <div class="modal-conta" id="container-modal-conta">
+        <!-- O conteúdo do modal será carregado dinamicamente via JavaScript -->
+    </div>
+
+    <!-- Footer Lobby -->
+    <footer class="footer-lobby">
+        <div class="footer-left">
+            <img src="../midia/logo/logo.png" alt="Sortu Fácil" class="footer-logo">
+            <span>© 2026 Sortu Fácil</span>
+        </div>
+
+        <div class="footer-right">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <div id="cookie-consent" class="cookie-consent" aria-live="polite">
+        <!-- O conteúdo do aviso de cookies será inserido aqui dinamicamente via JavaScript -->
+    </div>
+
+ <script type="module" src="./js/import.js"></script>
+
+</body>
+</html>

@@ -169,7 +169,7 @@ async function enviarLogin(event) {
         formData.append('email', email);
         formData.append('password', password);
 
-        const response = await fetch('../back-end-sortu-facil/api.php', {
+        const response = await fetch('../back-end/api.php', {
             method: 'POST',
             body: formData
         });
@@ -189,7 +189,7 @@ async function enviarLogin(event) {
                 }
                 gerenciarLembrarLogin(email, lembrar);
                 localStorage.setItem('token', data.token);
-                window.location.href = '/sortu_facil/fornt-end-sortu-facil/estrutura-principal/autenticador.html'; // ← front decide
+                window.location.href = '/sortu_facil/front-end/estrutura-principal/autenticador.html'; // ← front decide
             }
 
         } else {
@@ -222,7 +222,7 @@ async function enviarCadastro(event) {
         const formData = new FormData(cadastroForm);
         formData.append('action', 'cadastro'); // 👈 NOVO
 
-        const response = await fetch('../back-end-sortu-facil/api.php', {
+        const response = await fetch('../back-end/api.php', {
             method: 'POST',
             body: formData
         });
@@ -241,7 +241,7 @@ async function enviarCadastro(event) {
                     }
                     localStorage.setItem('token', data.token);
                 }
-                window.location.href = '/sortu_facil/fornt-end-sortu-facil/estrutura-principal/autenticador.html'; // ← front decide
+                window.location.href = '/sortu_facil/front-end/estrutura-principal/autenticador.html'; // ← front decide
             }
 
         } else {
