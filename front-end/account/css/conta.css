@@ -126,8 +126,9 @@
     display: inline-block;
 }
 
-/* Botões */
 
+
+/* Botões */
 
 .btn-ver-perfil {
     background: linear-gradient(135deg, var(--verde-claro), var(--verde-principal));

@@ -12,22 +12,57 @@ const abas = {
 
 let moduloAtivo = null
 
+const cacheAbas = {} // 👈 cache das abas
+
 async function carregarAba(nome) {
   const aba = abas[nome]
   if (!aba) return
 
-  // 1. Busca e injeta o HTML
-  const resposta = await fetch(aba.view)
-  const html = await resposta.text()
-  document.getElementById('conteudo-aba').innerHTML = html
+  const container = document.getElementById('conteudo-aba')
 
-  // 2. Destrói o módulo anterior se ele expõe um destroy()
-  if (moduloAtivo?.destroy) moduloAtivo.destroy()
+  // 🔥 1. Se já tiver no cache → usa direto (SEM spinner)
+  if (cacheAbas[nome]) {
+    container.innerHTML = cacheAbas[nome]
 
-  // 3. Importa e inicializa o módulo da aba
-  const mod = await aba.module()
-  moduloAtivo = mod
-  if (mod.init) mod.init()
+    if (moduloAtivo?.destroy) moduloAtivo.destroy()
+
+    const mod = await aba.module()
+    moduloAtivo = mod
+    if (mod.init) mod.init()
+
+    return
+  }
+
+  // 🔄 2. Mostra spinner enquanto carrega
+  container.innerHTML = `
+    <div class="spinner-container">
+        <div class="spinner"></div>
+    </div>
+  `
+
+  try {
+    // 📡 3. Busca HTML
+    const resposta = await fetch(aba.view)
+    const html = await resposta.text()
+
+    // 💾 salva no cache
+    cacheAbas[nome] = html
+
+    // 🧹 limpa módulo anterior
+    if (moduloAtivo?.destroy) moduloAtivo.destroy()
+
+    // 🖥️ renderiza
+    container.innerHTML = html
+
+    // 📦 carrega JS da aba
+    const mod = await aba.module()
+    moduloAtivo = mod
+    if (mod.init) mod.init()
+
+  } catch (erro) {
+    container.innerHTML = `<p>Erro ao carregar conteúdo 😢</p>`
+    console.error(erro)
+  }
 }
 
 function ativarAba(nome) {

@@ -1,3 +1,93 @@
 <section class="cont-rifa">
-    <h1>Ok isso deu certo, Rifa!!</h1>
+            <div class="bloco-visualizacao-rifas">
+
+                <nav class="status-vendedor">
+                    <ul>
+                        <li data-status="ativa">Ativas <span id="rifas-ativas">0</span></li>
+                        <li data-status="adiada">Adiadas <span id="rifas-adiadas">0</span></li>
+                        <li data-status="cancelada">Canceladas <span id="rifas-canceladas">0</span></li>
+                        <li data-status="concluida">Concluídas <span id="rifas-concluidas">0</span></li>
+                    </ul>
+                </nav>
+
+                <h2 id="titulo-aba">
+                    <span id="titulo-texto">Ativas</span>
+                    <button id="btn-criar-rifa-icone" class="btn-icone">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </h2>
+                <section class="grade-rifas">
+                    <div id="conteudo-rifas">
+
+
+
+
+                        <div id="bloco-sem-rifas" class="sem-rifas" style="display:none;"><p id="mensagem-sem-rifas"></p></div>
+
+                        <div class="lista-rifas" id="lista-rifas">
+
+                            <div id="modelo-rifa-card" >
+
+                                <div class="rifa-card-example">
+                                    <h4 class="title"></h4>
+
+                                    <div class="img-premio">
+                                        <i class="fa-solid fa-circle-chevron-left btn-left" ></i>
+
+                                        <div class="img-container">
+                                            <!-- Imagem inserida pelo JS -->
+                                        </div>
+                                        
+                                        
+                                        <i class="fa-solid fa-circle-chevron-right btn-right"></i>
+                                    </div>
+                                    <div class="cont-navegacao">
+                                        <div class="indentificador-de-paginacao">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="descricao">
+                                        <p class="texto"></p>
+                                    </div>
+
+                                    <div class="grup-details">
+                                        <div class="details">
+                                            <span>
+                                                <i class="fas fa-tag"></i>
+                                                R$ <span class="price"></span> /dezena
+                                            </span>
+
+                                            <span class="tickets-sold">
+                                                <i class="fas fa-ticket-alt"></i>
+                                            </span>
+                                        </div>
+
+                                        <div class="details">
+                                            <span class="draw-date">
+                                                <i class="far fa-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="link-gerenciar">
+                                        <a class="gerenciar" href="#">Gerenciar →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="carregar-mais" style="display:none; text-align:center; margin-top:10px;">
+                            <button id="btn-carregar-mais" style="
+                                background: none;
+                                border: none;
+                                color: #4CAF50;
+                                text-decoration: underline;
+                                cursor: pointer;
+                                padding: 0;
+                                font: inherit;
+                            ">Carregar mais</button>
+                        </div>
+                    </div>
+                </section>
+            </div>  
 </section>

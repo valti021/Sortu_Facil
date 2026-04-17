@@ -1,9 +1,12 @@
+// Verificar sessão
+import '/../Sortu_facil/front-end/account/js/verificar-sessao.js';
+
 //Navegação
 import './navbar/navbar.js';
 import './navbar/navbar-responsive.js'
 
 // Modais
-import './header/conta.js';
+import '../../account/js/conta.js';
 
 // Navegação por abas
 import './tabs.js';

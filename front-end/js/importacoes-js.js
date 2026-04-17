@@ -1,5 +1,5 @@
 // verificar sessão
-import './verificar-sessao.js'
+import '../account/js/verificar-sessao.js';
 
 // Navbar
 import './navbar.js';

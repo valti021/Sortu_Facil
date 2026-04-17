@@ -1,0 +1,229 @@
+.status-vendedor {
+    background: var(--cor-branco);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0 30px;
+    box-shadow: 0 4px 12px var(--sombra-suave);
+    border: 1px solid var(--verde-claro);
+}
+
+.status-vendedor ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.status-vendedor li {
+    flex: 1;
+    min-width: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px 15px;
+    border-radius: 10px;
+    background: var(--cor-branco);
+    border: 2px solid var(--verde-claro);
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    color: var(--cinza-titulo);
+    position: relative;
+    overflow: hidden;
+}
+
+.status-vendedor li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--verde-claro);
+    transition: all 0.3s ease;
+}
+
+.status-vendedor li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px var(--sombra-suave);
+    border-color: var(--verde-principal);
+    background: linear-gradient(135deg, var(--cor-branco) 0%, #f8fff8 100%);
+}
+
+.status-vendedor li:hover::before {
+    background: var(--verde-principal);
+    height: 5px;
+}
+
+.status-vendedor li.ativo {
+    border-color: var(--verde-principal);
+    background: linear-gradient(135deg, #f0fff0 0%, #e8f5e9 100%);
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+}
+
+.status-vendedor li.ativo::before {
+    background: var(--verde-principal);
+    height: 5px;
+}
+
+.status-vendedor li.ativo span {
+    color: var(--verde-principal);
+    text-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+}
+
+.status-vendedor span {
+    font-weight: 700;
+    color: var(--verde-escuro);
+    font-size: 28px;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+}
+
+.status-vendedor li:hover span {
+    color: var(--verde-principal);
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+
+    .status-vendedor ul {
+        grid-template-columns: repeat(4, 1fr);
+        min-width: 50px;
+        display: grid;
+        gap: 15px;
+    }
+    .status-vendedor li {
+        min-width: 110px;
+        padding: 8px 8px;
+        font-size: 15px;
+    }
+    
+    .status-vendedor span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .status-vendedor ul {
+        grid-template-columns: repeat(4, 1fr);
+        min-width: 50px;
+        display: grid;
+        gap: 15px;
+    }
+    
+    .status-vendedor li {
+        min-width: auto;
+        padding: 15px 10px;
+    }
+    
+    .status-vendedor {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .status-vendedor ul {
+        grid-template-columns: 1fr;
+        display: flex;
+        
+        gap: 8px;
+    }
+    
+    .status-vendedor li {
+        font-size: 10px;
+        padding: 8px;
+        max-width: 100px;
+    }
+    
+    .status-vendedor span {
+        font-size: 12px;
+    }
+}
+
+.status-vendedor li.ativo::after {
+    content: '✓';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--verde-principal);
+    font-weight: bold;
+    font-size: 14px;
+    background: var(--cor-branco);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--verde-principal);
+}
+
+
+@media (max-width: 480px) {
+    .status-vendedor li.ativo::after{
+        display: none;
+    }
+}
+
+
+
+.status-vendedor span {
+    animation: counterPop 0.3s ease;
+}
+
+.status-vendedor li[data-status="ativa"]:hover,
+.status-vendedor li[data-status="ativa"].ativo {
+    border-color: var(--verde-principal);
+}
+
+.status-vendedor li[data-status="adiada"]:hover,
+.status-vendedor li[data-status="adiada"].ativo {
+    border-color: #FFA726;
+}
+
+.status-vendedor li[data-status="adiada"]:hover::before,
+.status-vendedor li[data-status="adiada"].ativo::before {
+    background: #FFA726;
+}
+
+.status-vendedor li[data-status="adiada"]:hover span,
+.status-vendedor li[data-status="adiada"].ativo span {
+    color: #FFA726;
+}
+
+.status-vendedor li[data-status="cancelada"]:hover,
+.status-vendedor li[data-status="cancelada"].ativo {
+    border-color: #EF5350;
+}
+
+.status-vendedor li[data-status="cancelada"]:hover::before,
+.status-vendedor li[data-status="cancelada"].ativo::before {
+    background: #EF5350;
+}
+
+.status-vendedor li[data-status="cancelada"]:hover span,
+.status-vendedor li[data-status="cancelada"].ativo span {
+    color: #EF5350;
+}
+
+.status-vendedor li[data-status="concluida"]:hover,
+.status-vendedor li[data-status="concluida"].ativo {
+    border-color: #5C6BC0;
+}
+
+.status-vendedor li[data-status="concluida"]:hover::before,
+.status-vendedor li[data-status="concluida"].ativo::before {
+    background: #5C6BC0;
+}
+
+.status-vendedor li[data-status="concluida"]:hover span,
+.status-vendedor li[data-status="concluida"].ativo span {
+    color: #5C6BC0;
+}

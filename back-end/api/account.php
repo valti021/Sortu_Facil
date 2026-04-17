@@ -39,19 +39,19 @@ if (!$action) {
 switch ($action) {
 
     case "login":
-        require_once __DIR__ . '/accounts/login.php';
+        require_once __DIR__ . '/../accounts/login.php';
         break;
 
     case "cadastro":
-        require_once __DIR__ . '/accounts/cadastro.php';
+        require_once __DIR__ . '/../accounts/cadastro.php';
         break;
 
     case "sessao":
-        require_once __DIR__ . '/accounts/getUser.php';
+        require_once __DIR__ . '/../accounts/getUser.php';
         break;
 
     case "logout":
-        require_once __DIR__ . '/accounts/logout.php';
+        require_once __DIR__ . '/../accounts/logout.php';
         break;
 
     default:

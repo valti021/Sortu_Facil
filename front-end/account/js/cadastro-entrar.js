@@ -169,7 +169,7 @@ async function enviarLogin(event) {
         formData.append('email', email);
         formData.append('password', password);
 
-        const response = await fetch('../back-end/api.php', {
+        const response = await fetch('../back-end/api/account.php', {
             method: 'POST',
             body: formData
         });
@@ -222,7 +222,7 @@ async function enviarCadastro(event) {
         const formData = new FormData(cadastroForm);
         formData.append('action', 'cadastro'); // 👈 NOVO
 
-        const response = await fetch('../back-end/api.php', {
+        const response = await fetch('../back-end/api/account.php', {
             method: 'POST',
             body: formData
         });

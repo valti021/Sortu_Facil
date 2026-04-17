@@ -1,7 +1,6 @@
 <?php
-require_once '../cors-config.php';
-require_once '../gerar-token.php';
-require_once "conexao.php";
+require_once '../security/gerar-token.php';
+require_once "../db_config/conexao.php";
 
 header('Content-Type: application/json; charset=UTF-8');
 

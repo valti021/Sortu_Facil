@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Carrega o HTML do modal
-        fetch("./modals/conta.html")
+        fetch("../account/modals/conta.html")
             .then(res => {
                 if (!res.ok) throw new Error("Erro ao carregar modal");
                 return res.text();
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Authorization": `Bearer ${token}`
             };
 
-            fetch("../../back-end/api.php", {
+            fetch("../../back-end/api/account.php", {
                 method: "POST",
                 headers: headers,
                 body: JSON.stringify({

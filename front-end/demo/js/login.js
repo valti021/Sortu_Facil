@@ -85,7 +85,7 @@ function fazerLoginDemo() {
         
         // Aguarda um pouco para garantir que os dados foram salvos
         setTimeout(() => {
-            window.location.href = '../front-end/estrutura-principal/main.html';
+            window.location.href = '../front-end/home/index.html';
         }, 200);
     } catch (error) {
         console.error('❌ Erro ao fazer login demo:', error);
